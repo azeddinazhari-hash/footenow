@@ -10,7 +10,7 @@ $nom = $_SESSION['user_nom'] ?? null;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= __('page_title') ?></title>
     <meta name="description" content="<?= __('meta_desc') ?>">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../style.css">
     <?php if ($is_rtl): ?>
     <style>
         body { direction: rtl; text-align: right; }
