@@ -6,7 +6,19 @@
   },
   "rewrites": [
     { "source": "/", "destination": "/api/index.php" },
-    { "source": "/:path.php", "destination": "/api/:path.php" },
-    { "source": "/:path", "destination": "/api/:path.php" }
+    { "source": "/index.php", "destination": "/api/index.php" },
+    { "source": "/matchs.php", "destination": "/api/matchs.php" },
+    { "source": "/matchs", "destination": "/api/matchs.php" },
+    { "source": "/connexion.php", "destination": "/api/connexion.php" },
+    { "source": "/connexion", "destination": "/api/connexion.php" },
+    { "source": "/creer_match.php", "destination": "/api/creer_match.php" },
+    { "source": "/creer_match", "destination": "/api/creer_match.php" },
+    { "source": "/inscription.php", "destination": "/api/inscription.php" },
+    { "source": "/inscription", "destination": "/api/inscription.php" },
+    { "source": "/chat_ia.php", "destination": "/api/chat_ia.php" },
+    { "source": "/chat_ia", "destination": "/api/chat_ia.php" },
+    { "source": "/traiter_match.php", "destination": "/api/traiter_match.php" },
+    { "source": "/traiter_connexion.php", "destination": "/api/traiter_connexion.php" },
+    { "source": "/traiter_inscription.php", "destination": "/api/traiter_inscription.php" }
   ]
 }
