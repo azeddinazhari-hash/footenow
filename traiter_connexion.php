@@ -5,7 +5,12 @@ $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';
 
 // Connexion DB
-$conn = new mysqli("localhost", "root", "", "koranow_db");
+$db_host = getenv('DB_HOST') ?: "localhost";
+$db_user = getenv('DB_USER') ?: "root";
+$db_pass = getenv('DB_PASS') ?: "";
+$db_name = getenv('DB_NAME') ?: "koranow_db";
+
+$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 if ($conn->connect_error) {
     die("Erreur connexion DB: " . $conn->connect_error);
 }
@@ -26,7 +31,7 @@ if ($result->num_rows === 1) {
         $_SESSION['user_nom'] = $user['nom'];
 
         // Redirect vers accueil
-        header("Location: daccueil.php");
+        header("Location: index.php");
         exit;
     }
 }

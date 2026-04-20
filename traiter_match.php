@@ -6,7 +6,12 @@ $lieu    = $_POST['lieu'];
 $joueurs = $_POST['joueurs'];
 
 // Connexion DB
-$conn = new mysqli("localhost", "root", "", "koranow_db");
+$db_host = getenv('DB_HOST') ?: "localhost";
+$db_user = getenv('DB_USER') ?: "root";
+$db_pass = getenv('DB_PASS') ?: "";
+$db_name = getenv('DB_NAME') ?: "koranow_db";
+
+$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 
 // Vérifier connexion
 if ($conn->connect_error) {
@@ -36,13 +41,13 @@ $conn->close();
 <!-- Header -->
 <header class="site-header">
     <div class="header-inner">
-        <a href="daccueil.php" class="logo">
+        <a href="index.php" class="logo">
             <span class="logo-icon">⚽</span>
             KoraNow
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
         <nav class="main-nav" id="mainNav">
-            <a href="daccueil.php">Accueil</a>
+            <a href="index.php">Accueil</a>
             <a href="matchs.php">Matchs</a>
             <a href="creer_match.php">Créer un match</a>
             <a href="connexion.php">Connexion</a>

@@ -29,13 +29,13 @@ $nom = $_SESSION['user_nom'] ?? null;
 <!-- Header -->
 <header class="site-header">
     <div class="header-inner">
-        <a href="daccueil.php" class="logo">
+        <a href="index.php" class="logo">
             <span class="logo-icon">⚽</span>
             KoraNow
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
         <nav class="main-nav" id="mainNav">
-            <a href="daccueil.php" class="active"><?= __('nav_home') ?></a>
+            <a href="index.php" class="active"><?= __('nav_home') ?></a>
             <a href="matchs.php"><?= __('nav_matches') ?></a>
             <a href="creer_match.php"><?= __('nav_create') ?></a>
             <?php if ($nom): ?>
@@ -199,7 +199,7 @@ $nom = $_SESSION['user_nom'] ?? null;
             <?= __('ai_text_1') ?><br>
             <?= __('ai_text_2') ?>
         </p>
-        <a href="chat_ia.php" class="btn btn-primary">
+       <a href="chat_ia.php" class="btn btn-primary">
             <?= __('ai_btn') ?>
         </a>
     </div>

@@ -12,13 +12,13 @@
 <!-- Header -->
 <header class="site-header">
     <div class="header-inner">
-        <a href="daccueil.php" class="logo">
+        <a href="index.php" class="logo">
             <span class="logo-icon">⚽</span>
             KoraNow
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
         <nav class="main-nav" id="mainNav">
-            <a href="daccueil.php">Accueil</a>
+            <a href="index.php">Accueil</a>
             <a href="matchs.php">Matchs</a>
             <a href="creer_match.php">Créer un match</a>
             <a href="connexion.php">Connexion</a>

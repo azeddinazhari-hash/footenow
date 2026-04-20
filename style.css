@@ -1085,3 +1085,113 @@ a:hover {
         grid-template-columns: 1fr;
     }
 }
+
+/* ---------- Chat Interface ---------- */
+.chat-container {
+    max-width: 800px;
+    margin: 40px auto;
+    height: calc(100vh - 250px);
+    min-height: 500px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(20px);
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--glass-border) transparent;
+}
+
+.message {
+    max-width: 80%;
+    padding: 12px 18px;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    position: relative;
+    animation: fadeInUp 0.3s ease;
+}
+
+.message-user {
+    align-self: flex-end;
+    background: var(--gradient-primary);
+    color: #0a0e14;
+    font-weight: 500;
+    border-bottom-right-radius: 4px;
+}
+
+.message-ai {
+    align-self: flex-start;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    border-bottom-left-radius: 4px;
+}
+
+.chat-input-area {
+    padding: 24px;
+    background: rgba(10, 14, 20, 0.5);
+    border-top: 1px solid var(--glass-border);
+}
+
+.chat-form {
+    display: flex;
+    gap: 12px;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    color: var(--text-primary);
+    outline: none;
+    transition: var(--transition);
+}
+
+.chat-input:focus {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.chat-send-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    color: #0a0e14;
+}
+
+.chat-send-btn:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow);
+}
+
+@media (max-width: 768px) {
+    .chat-container {
+        height: calc(100vh - 180px);
+        margin: 10px;
+        border-radius: var(--radius-lg);
+    }
+    .message {
+        max-width: 90%;
+    }
+}

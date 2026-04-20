@@ -18,13 +18,13 @@ require_once 'i18n.php';
 <!-- Header -->
 <header class="site-header">
     <div class="header-inner">
-        <a href="daccueil.php" class="logo">
+        <a href="index.php" class="logo">
             <span class="logo-icon">⚽</span>
             KoraNow
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
         <nav class="main-nav" id="mainNav">
-            <a href="daccueil.php"><?= __('nav_home') ?></a>
+            <a href="index.php"><?= __('nav_home') ?></a>
             <a href="matchs.php"><?= __('nav_matches') ?></a>
             <a href="creer_match.php"><?= __('nav_create') ?></a>
             <a href="connexion.php" class="active"><?= __('nav_login') ?></a>
