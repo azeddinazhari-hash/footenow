@@ -30,7 +30,7 @@ if (!$result) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= __('matchs_title') ?></title>
     <meta name="description" content="<?= __('matchs_subtitle') ?>">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <?php if ($is_rtl): ?>
     <style>
         body { direction: rtl; text-align: right; }

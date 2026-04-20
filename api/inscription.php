@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KoraNow — Inscription</title>
     <meta name="description" content="Crée ton compte KoraNow et commence à organiser des matchs de football amateurs.">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 

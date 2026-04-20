@@ -8,7 +8,7 @@ require_once 'i18n.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= __('create_title') ?></title>
     <meta name="description" content="<?= __('create_subtitle') ?>">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <?php if ($is_rtl): ?>
     <style>body { direction: rtl; text-align: right; }</style>
     <?php endif; ?>
