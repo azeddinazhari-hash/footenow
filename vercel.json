@@ -19,6 +19,7 @@
     { "source": "/chat_ia", "destination": "/api/chat_ia.php" },
     { "source": "/traiter_match.php", "destination": "/api/traiter_match.php" },
     { "source": "/traiter_connexion.php", "destination": "/api/traiter_connexion.php" },
-    { "source": "/traiter_inscription.php", "destination": "/api/traiter_inscription.php" }
+    { "source": "/traiter_inscription.php", "destination": "/api/traiter_inscription.php" },
+    { "source": "/setup_db.php", "destination": "/api/setup_db.php" }
   ]
 }
