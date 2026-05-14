@@ -1,14 +1,10 @@
 <?php
 // Script de configuration de la base de données
-$db_host = getenv('DB_HOST');
-$db_user = getenv('DB_USER');
-$db_pass = getenv('DB_PASS');
-$db_name = getenv('DB_NAME');
-$db_port = getenv('DB_PORT') ?: 3306;
-
-if (!$db_host) {
-    die("Erreur: Les variables d'environnement ne sont pas encore configurées dans Vercel.");
-}
+$db_host = "localhost";
+$db_user = "root";
+$db_pass = "";
+$db_name = "koranow_db";
+$db_port = 3306;
 
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
 

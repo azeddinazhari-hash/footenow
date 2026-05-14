@@ -1,0 +1,27 @@
+RewriteEngine On
+
+# Redirect root to api/index.php
+RewriteRule ^$ api/index.php [L]
+RewriteRule ^index\.php$ api/index.php [L]
+
+# Match pages
+RewriteRule ^matchs$ api/matchs.php [L]
+RewriteRule ^matchs\.php$ api/matchs.php [L]
+
+# Auth pages
+RewriteRule ^connexion$ api/connexion.php [L]
+RewriteRule ^connexion\.php$ api/connexion.php [L]
+RewriteRule ^inscription$ api/inscription.php [L]
+RewriteRule ^inscription\.php$ api/inscription.php [L]
+
+# Feature pages
+RewriteRule ^creer_match$ api/creer_match.php [L]
+RewriteRule ^creer_match\.php$ api/creer_match.php [L]
+RewriteRule ^chat_ia$ api/chat_ia.php [L]
+RewriteRule ^chat_ia\.php$ api/chat_ia.php [L]
+
+# API / Processing
+RewriteRule ^traiter_match\.php$ api/traiter_match.php [L]
+RewriteRule ^traiter_connexion\.php$ api/traiter_connexion.php [L]
+RewriteRule ^traiter_inscription\.php$ api/traiter_inscription.php [L]
+RewriteRule ^setup_db\.php$ api/setup_db.php [L]

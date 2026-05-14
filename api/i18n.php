@@ -8,6 +8,16 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+// Robust base path detection for assets
+$script_name = $_SERVER['SCRIPT_NAME'];
+$base_dir = str_replace('\\', '/', dirname($script_name));
+// If we are inside /api/ folder, we need the parent folder
+if (basename($base_dir) === 'api') {
+    $base_dir = dirname($base_dir);
+}
+// Ensure it ends with a single slash
+$base_path = rtrim($base_dir, '/') . '/';
+
 // Handle language switch
 if (isset($_GET['lang']) && in_array($_GET['lang'], ['fr', 'en', 'ar'])) {
     $_SESSION['lang'] = $_GET['lang'];

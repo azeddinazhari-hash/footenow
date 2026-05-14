@@ -1,22 +1,30 @@
 <?php
-$ville   = $_POST['ville'];
-$date    = $_POST['date_match'];
-$heure   = $_POST['heure_match'];
-$lieu    = $_POST['lieu'];
-$joueurs = $_POST['joueurs'];
+require_once 'i18n.php';
+
+$ville   = $_POST['ville'] ?? '';
+$date    = $_POST['date_match'] ?? '';
+$heure   = $_POST['heure_match'] ?? '';
+$lieu    = $_POST['lieu'] ?? '';
+$joueurs = $_POST['joueurs'] ?? '';
 
 // Connexion DB
-$db_host = getenv('DB_HOST') ?: "localhost";
-$db_user = getenv('DB_USER') ?: "root";
-$db_pass = getenv('DB_PASS') ?: "";
-$db_name = getenv('DB_NAME') ?: "koranow_db";
-$db_port = getenv('DB_PORT') ?: 3306;
+$db_host = "localhost";
+$db_user = "root";
+$db_pass = "";
+$db_name = "koranow_db";
+$db_port = 3306;
 
-$conn = new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
+mysqli_report(MYSQLI_REPORT_STRICT | MYSQLI_REPORT_ERROR);
 
-// Vérifier connexion
-if ($conn->connect_error) {
-    die("Erreur connexion DB: " . $conn->connect_error);
+try {
+    $conn = new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
+} catch (mysqli_sql_exception $e) {
+    die("<div style='font-family:sans-serif; padding: 20px; background: #fff0f0; border-radius: 8px; border: 1px solid #ffcaca; color: #d00;'>
+        <h3 style='margin-top:0;'>❌ Erreur de connexion MySQL</h3>
+        <p>Impossible de se connecter à la base de données. <b>Assurez-vous que MySQL est démarré dans le Control Panel XAMPP.</b></p>
+        <p><i>Détail: " . $e->getMessage() . "</i></p>
+        <a href='index.php' style='color: #d00; font-weight: bold;'>Retour à l'accueil</a>
+    </div>");
 }
 
 // Insert
@@ -35,7 +43,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KoraNow — Match enregistré</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="<?= $base_path ?>style.css">
 </head>
 <body>
 
